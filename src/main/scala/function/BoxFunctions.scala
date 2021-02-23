@@ -44,6 +44,10 @@ final case class Box(rowCoordinate: RowCoordinate, columnCoordinate: ColumnCoord
 
 object Box {
 
+  def getNonOverlappedBoxes(input: String): String = {
+    getNonOverlappedBoxes(Utils.strListToMultiCharArray(input.split("\n").toList))
+  }
+
   def getNonOverlappedBoxes(input: Array[Array[Char]]) = {
     val rowCount = input.length
     val columnCount = input.head.length
